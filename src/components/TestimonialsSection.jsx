@@ -6,25 +6,25 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Marketing Executive",
-      content: "Working with Michelle has been transformative. Her combined approach to mental and physical training helped me manage work stress while achieving my fitness goals. Highly recommended!",
+      name: "שרה ג'ונסון",
+      role: "מנהלת שיווק",
+      content: "העבודה עם מיכל הייתה מהפכנית. הגישה המשולבת שלה לאימון מנטלי ופיזי עזרה לי לנהל מתח בעבודה תוך כדי השגת מטרות הכושר שלי. מומלץ בחום!",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
       rating: 5
     },
     {
       id: 2,
-      name: "David Chen",
-      role: "Software Engineer",
-      content: "As someone who spends most of my day sitting, Michelle's functional coaching has been a game-changer for my posture and back pain. She really knows how to personalize the training to address specific issues.",
+      name: "דוד צ'ן",
+      role: "מהנדס תוכנה",
+      content: "כמי שמבלה את רוב היום בישיבה, האימון התפקודי של מיכל שינה את המשחק בכל מה שקשור ליציבה וכאבי גב. היא באמת יודעת להתאים את האימון לבעיות ספציפיות.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
       rating: 5
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
-      role: "Small Business Owner",
-      content: "Michelle's mental coaching techniques have helped me deal with the daily pressures of running a business. I'm more focused, less stressed, and making better decisions. The physical training is excellent too!",
+      name: "אמה רודריגז",
+      role: "בעלת עסק קטן",
+      content: "טכניקות האימון המנטלי של מיכל עזרו לי להתמודד עם הלחצים היומיומיים של ניהול עסק. אני יותר ממוקדת, פחות לחוצה ומקבלת החלטות טובות יותר. האימון הפיזי גם הוא מצוין!",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
       rating: 5
     }
@@ -50,9 +50,9 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Client Success Stories</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">סיפורי הצלחה של לקוחות</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Read what my clients have to say about their transformation journey.
+            קראו מה יש ללקוחות שלי לומר על מסע השינוי שלהם.
           </p>
         </motion.div>
 
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
                 transition={{ duration: 0.5 }}
                 className="bg-gray-50 rounded-3xl p-8 md:p-12 shadow-lg"
               >
-                <div className="flex flex-col md:flex-row gap-8">
+                <div className="flex flex-col md:flex-row-reverse gap-8">
                   <div className="md:w-1/3 flex flex-col items-center">
                     <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
                       <img 
@@ -103,16 +103,16 @@ export default function TestimonialsSection() {
             
             <button 
               onClick={prev}
-              className="absolute top-1/2 -left-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
+              className="absolute top-1/2 -right-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
             >
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+              <ArrowRight className="w-5 h-5 text-gray-600" />
             </button>
             
             <button 
               onClick={next}
-              className="absolute top-1/2 -right-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
+              className="absolute top-1/2 -left-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
             >
-              <ArrowRight className="w-5 h-5 text-gray-600" />
+              <ArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
           </div>
           

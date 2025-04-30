@@ -6,9 +6,9 @@ export default function ProgramsSection() {
   const programs = [
     {
       id: "mental",
-      title: "Mental Coaching",
-      description: "Develop mental resilience, improve focus, and learn stress management techniques.",
-      benefits: ["Reduced anxiety", "Enhanced focus", "Improved sleep", "Stress management"],
+      title: "אימון מנטלי",
+      description: "פיתוח חוסן מנטלי, שיפור ריכוז וטכניקות לניהול מתח.",
+      benefits: ["הפחתת חרדה", "שיפור ריכוז", "שיפור שינה", "ניהול מתח"],
       icon: Brain,
       color: "from-blue-500 to-purple-500",
       lightColor: "bg-blue-50",
@@ -16,9 +16,9 @@ export default function ProgramsSection() {
     },
     {
       id: "functional",
-      title: "Functional Coaching",
-      description: "Focus on mobility, strength, endurance and overall physical well-being.",
-      benefits: ["Increased strength", "Better flexibility", "Improved posture", "Weight management"],
+      title: "אימון תפקודי",
+      description: "התמקדות בניידות, כוח, סיבולת ובריאות גופנית כללית.",
+      benefits: ["עלייה בכוח", "גמישות משופרת", "שיפור יציבה", "ניהול משקל"],
       icon: Dumbbell,
       color: "from-teal-500 to-green-500",
       lightColor: "bg-teal-50",
@@ -26,9 +26,9 @@ export default function ProgramsSection() {
     },
     {
       id: "combined",
-      title: "Combined Program",
-      description: "The most comprehensive approach integrating both mental and physical training.",
-      benefits: ["Holistic transformation", "Personalized approach", "Long-term results", "Complete wellness"],
+      title: "תוכנית משולבת",
+      description: "הגישה המקיפה ביותר המשלבת אימון מנטלי ופיזי.",
+      benefits: ["שינוי הוליסטי", "גישה מותאמת אישית", "תוצאות ארוכות טווח", "בריאות שלמה"],
       icon: Activity,
       color: "from-purple-500 to-pink-500",
       lightColor: "bg-purple-50",
@@ -46,9 +46,9 @@ export default function ProgramsSection() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Training Programs</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">תוכניות אימון</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the program that best fits your goals and start your transformation journey today.
+              בחרו את התוכנית המתאימה ביותר למטרותיכם והתחילו את מסע השינוי שלכם היום.
             </p>
           </motion.div>
         </div>
@@ -75,11 +75,11 @@ export default function ProgramsSection() {
                 </p>
                 
                 <div className="mb-8">
-                  <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-3">Benefits</h4>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-3">יתרונות</h4>
                   <ul className="space-y-2">
                     {program.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center">
-                        <span className={`w-2 h-2 rounded-full ${program.accentColor} mr-2`}></span>
+                        <span className={`w-2 h-2 rounded-full ${program.accentColor} ml-2`}></span>
                         <span className="text-gray-700">{benefit}</span>
                       </li>
                     ))}
@@ -94,7 +94,7 @@ export default function ProgramsSection() {
                   }}
                   className={`w-full py-3 px-4 rounded-lg border-2 ${program.accentColor} text-gray-800 font-medium hover:bg-gray-50 transition-colors duration-300`}
                 >
-                  Learn More
+                  למידע נוסף
                 </button>
               </div>
             </motion.div>

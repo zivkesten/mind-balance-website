@@ -43,19 +43,19 @@ export default function Layout({ children, currentPageName }) {
             {/* Logo */}
             <Link to={createPageUrl("Home")} className="flex items-center">
               <span className={`text-xl md:text-2xl font-bold ${isScrolled ? "text-teal-600" : "text-white"}`}>
-                Michelle Rapoport Kesten
+                מיכל רפופורט קסטן
               </span>
             </Link>
             
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-reverse space-x-8">
               <button 
                 onClick={() => scrollToSection("about")}
                 className={`font-medium hover:text-teal-600 transition-colors ${
                   isScrolled ? "text-gray-700" : "text-white"
                 }`}
               >
-                About
+                אודות
               </button>
               <button 
                 onClick={() => scrollToSection("programs")}
@@ -63,7 +63,7 @@ export default function Layout({ children, currentPageName }) {
                   isScrolled ? "text-gray-700" : "text-white"
                 }`}
               >
-                Programs
+                תוכניות
               </button>
               <button 
                 onClick={() => scrollToSection("testimonials")}
@@ -71,7 +71,7 @@ export default function Layout({ children, currentPageName }) {
                   isScrolled ? "text-gray-700" : "text-white"
                 }`}
               >
-                Testimonials
+                המלצות
               </button>
               <button 
                 onClick={() => scrollToSection("contact")}
@@ -81,7 +81,7 @@ export default function Layout({ children, currentPageName }) {
                     : "bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm"
                 } transition-colors`}
               >
-                Contact
+                צור קשר
               </button>
             </nav>
             
@@ -140,7 +140,7 @@ export default function Layout({ children, currentPageName }) {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Michelle Rapoport Kesten</h3>
+              <h3 className="text-xl font-bold mb-4">מיכל רפופורט קסטן</h3>
               <p className="text-gray-400 mb-4">
                 Certified personal trainer specializing in mental coaching, functional coaching, 
                 and holistic wellness programs.
@@ -181,12 +181,12 @@ export default function Layout({ children, currentPageName }) {
             </div>
             
             <div>
-              <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
+              <h3 className="text-xl font-bold mb-4">צור קשר</h3>
               <p className="text-gray-400 mb-2">
-                Tel Aviv, Israel
+                תל אביב, ישראל
               </p>
               <p className="text-gray-400 mb-2">
-                michelle@example.com
+                michal@example.com
               </p>
               <p className="text-gray-400 mb-4">
                 +972 50 123 4567
