@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Linkedin, Twitter, MapPin, Clock, Phone, Mail, Send } from "lucide-react";
+import { Instagram, Facebook, MapPin, Clock, Phone, Mail, Send } from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -92,7 +92,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-gray-900">שעות פעילות</h4>
                     <p className="text-gray-600">ראשון - חמישי: 7:00 - 20:00</p>
-                    <p className="text-gray-600">שישי - שבת: 8:00 - 15:00</p>
+                    <p className="text-gray-600">שישי: 8:00 - 15:00</p>
                   </div>
                 </div>
                 
@@ -102,7 +102,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">טלפון</h4>
-                    <p className="text-gray-600">050-123-4567</p>
+                    <p className="text-gray-600">054-421-6497</p>
                   </div>
                 </div>
                 
@@ -120,17 +120,11 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-4">התחברו ברשתות החברתיות</h4>
                 <div className="flex space-x-reverse space-x-4">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center hover:bg-pink-200 transition-colors">
+                  <a href="https://www.instagram.com/mrapokest/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center hover:bg-pink-200 transition-colors">
                     <Instagram className="w-5 h-5 text-pink-700" />
                   </a>
                   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center hover:bg-blue-200 transition-colors">
                     <Facebook className="w-5 h-5 text-blue-700" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/michal-rapoport-kesten/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center hover:bg-blue-200 transition-colors">
-                    <Linkedin className="w-5 h-5 text-blue-800" />
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center hover:bg-blue-200 transition-colors">
-                    <Twitter className="w-5 h-5 text-blue-500" />
                   </a>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -38,24 +38,25 @@ export default function AboutSection() {
             <div className="w-20 h-1 bg-teal-600 mb-8"></div>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              כמאמנת אישית מוסמכת עם התמחות באימון מנטלי ותפקודי, אני מביאה גישה הוליסטית ייחודית 
-              לשינוי אישי. עם למעלה מ-10 שנות ניסיון, עזרתי למאות לקוחות להשיג לא רק את מטרותיהם 
-              הפיזיות, אלא גם לפתח חוסן מנטלי ותפיסה חיובית.
+              מיכל רפופורט קסטן היא מאמנת אישית מוסמכת המתמחה באימון מנטלי, אימון תפקודי ותוכניות בריאות הוליסטיות. עם ניסיון של למעלה מ-10 שנים בתחום, מיכל עוזרת ללקוחותיה להשיג את מטרותיהם ולחיות חיים בריאים ומאוזנים יותר.
             </p>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              הפילוסופיה שלי פשוטה: בריאות אמיתית מגיעה מהתאמה בין הגוף והנפש. אני מאמינה שלכל אחד 
-              יש את הפוטנציאל לשנות את חייו באמצעות תרגול מסור, הדרכה נכונה וגישה מאוזנת לבריאות.
+              הגישה של מיכל משלבת בין אימון גופני לבין טיפוח הבריאות הנפשית, מתוך אמונה ששני ההיבטים קשורים זה בזה ומשפיעים זה על זה. היא מתמחה ביצירת תוכניות אימון מותאמות אישית המשלבות בין אימון מנטלי לאימון גופני.
             </p>
             
-            <div className="flex items-center">
-              <div className="flex gap-2 ml-6">
+            <div className="flex items-center space-x-reverse space-x-4">
+              <div className="flex gap-2">
                 <span className="inline-block px-3 py-1 bg-teal-100 text-teal-800 text-sm rounded-full">מאמנת אישית מוסמכת</span>
                 <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">מאמנת מנטלית</span>
               </div>
-              
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors">
-                <Linkedin size={24} />
+              <a 
+                href="https://www.instagram.com/mrapokest/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-teal-600 hover:text-teal-700 transition-colors"
+              >
+                <Instagram className="w-6 h-6" />
               </a>
             </div>
           </motion.div>
