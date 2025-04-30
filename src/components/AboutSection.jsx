@@ -19,9 +19,14 @@ export default function AboutSection() {
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-100 rounded-full z-0"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-100 rounded-full z-0"></div>
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBSka4mq9OOLrfimXo1WNgdaS8rIXEwCyXHQ&s"
+                loading="lazy"
+                src="https://res.cloudinary.com/djlokrcjm/image/upload/w_800,h_800,c_fill,g_face,r_max,e_improve,e_sharpen,q_auto:best/v1746022793/WhatsApp_Image_2025-04-13_at_14.01.19_sguccw.jpg"
                 alt="מיכל רפופורט קסטן"
-                className="rounded-lg shadow-xl z-10 relative"
+                className="rounded-full w-[400px] h-[400px] object-cover shadow-xl z-10 relative transition-transform hover:scale-105 duration-300"
+                onError={(e) => {
+                  e.currentTarget.src = '/fallback-image.svg';
+                  e.currentTarget.onerror = null;
+                }}
               />
             </div>
           </motion.div>
@@ -47,14 +52,27 @@ export default function AboutSection() {
             
             <div className="flex items-center space-x-reverse space-x-4">
               <div className="flex gap-2">
-                <span className="inline-block px-3 py-1 bg-teal-100 text-teal-800 text-sm rounded-full">מאמנת אישית מוסמכת</span>
-                <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">מאמנת מנטלית</span>
+                <span 
+                  className="inline-block px-3 py-1 bg-teal-100 text-teal-800 text-sm rounded-full hover:bg-teal-200 transition-colors"
+                  role="badge"
+                  aria-label="תעודת מאמנת אישית מוסמכת"
+                >
+                  מאמנת אישית מוסמכת
+                </span>
+                <span 
+                  className="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full hover:bg-purple-200 transition-colors"
+                  role="badge"
+                  aria-label="תעודת מאמנת מנטלית"
+                >
+                  מאמנת מנטלית
+                </span>
               </div>
               <a 
                 href="https://www.instagram.com/mrapokest/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-teal-600 hover:text-teal-700 transition-colors"
+                aria-label="עקבו אחרי באינסטגרם"
               >
                 <Instagram className="w-6 h-6" />
               </a>

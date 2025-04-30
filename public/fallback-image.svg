@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="400" cy="400" r="400" fill="#E6E6E6"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="400" cy="400" r="380" fill="#F3F4F6"/>
+  <circle cx="400" cy="400" r="360" fill="#F0FDFA"/>
+  
+  <!-- Placeholder Icon -->
+  <path d="M400 250C356.863 250 322 284.863 322 328C322 371.137 356.863 406 400 406C443.137 406 478 371.137 478 328C478 284.863 443.137 250 400 250ZM280 544V578H520V544C520 499.333 431.333 476 400 476C368.667 476 280 499.333 280 544Z" fill="#0D9488"/>
+  
+  <!-- Brand Element -->
+  <circle cx="400" cy="150" r="40" fill="#0D9488"/>
+  <circle cx="250" cy="400" r="40" fill="#7E22CE"/>
+  <circle cx="550" cy="400" r="40" fill="#0D9488"/>
+  <circle cx="400" cy="650" r="40" fill="#7E22CE"/>
+</svg> 
