@@ -1,67 +1,132 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
-export default function AboutSection() {
+export default function TestimonialsSection() {
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      role: "Marketing Executive",
+      content: "Working with Michelle has been transformative. Her combined approach to mental and physical training helped me manage work stress while achieving my fitness goals. Highly recommended!",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "David Chen",
+      role: "Software Engineer",
+      content: "As someone who spends most of my day sitting, Michelle's functional coaching has been a game-changer for my posture and back pain. She really knows how to personalize the training to address specific issues.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Emma Rodriguez",
+      role: "Small Business Owner",
+      content: "Michelle's mental coaching techniques have helped me deal with the daily pressures of running a business. I'm more focused, less stressed, and making better decisions. The physical training is excellent too!",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
+      rating: 5
+    }
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  const next = () => {
+    setCurrent((current + 1) % testimonials.length);
+  };
+
+  const prev = () => {
+    setCurrent((current - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="testimonials" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Image */}
-          <motion.div 
-            className="md:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-teal-100 rounded-full z-0"></div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-100 rounded-full z-0"></div>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBSka4mq9OOLrfimXo1WNgdaS8rIXEwCyXHQ&s"
-                alt="Michelle Rapoport Kesten"
-                className="rounded-lg shadow-xl z-10 relative"
-              />
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Client Success Stories</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Read what my clients have to say about their transformation journey.
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="relative">
+            <div className="overflow-hidden">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-gray-50 rounded-3xl p-8 md:p-12 shadow-lg"
+              >
+                <div className="flex flex-col md:flex-row gap-8">
+                  <div className="md:w-1/3 flex flex-col items-center">
+                    <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+                      <img 
+                        src={testimonials[current].image}
+                        alt={testimonials[current].name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold text-center text-gray-900">
+                      {testimonials[current].name}
+                    </h3>
+                    <p className="text-sm text-gray-500 text-center mb-4">
+                      {testimonials[current].role}
+                    </p>
+                    <div className="flex items-center">
+                      {Array(testimonials[current].rating).fill(0).map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="md:w-2/3">
+                    <div className="h-full flex flex-col justify-center">
+                      <div className="text-4xl font-serif text-teal-500 mb-4">"</div>
+                      <p className="text-lg text-gray-700 italic mb-6 leading-relaxed">
+                        {testimonials[current].content}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
+            
+            <button 
+              onClick={prev}
+              className="absolute top-1/2 -left-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
+            >
+              <ArrowLeft className="w-5 h-5 text-gray-600" />
+            </button>
+            
+            <button 
+              onClick={next}
+              className="absolute top-1/2 -right-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
+            >
+              <ArrowRight className="w-5 h-5 text-gray-600" />
+            </button>
+          </div>
           
-          {/* Content */}
-          <motion.div 
-            className="md:w-1/2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Michelle</h2>
-            <div className="w-20 h-1 bg-teal-600 mb-8"></div>
-            
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              As a certified personal trainer with specialization in both mental and functional coaching, 
-              I bring a unique, holistic approach to personal transformation. With over 10 years of experience, 
-              I've helped hundreds of clients achieve not just their physical goals, but also develop 
-              mental resilience and a positive mindset.
-            </p>
-            
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              My philosophy is simple: true wellness comes from aligning both mind and body. 
-              I believe that everyone has the potential to transform their life through dedicated practice, 
-              proper guidance, and a balanced approach to health.
-            </p>
-            
-            <div className="flex items-center">
-              <div className="flex gap-2 mr-6">
-                <span className="inline-block px-3 py-1 bg-teal-100 text-teal-800 text-sm rounded-full">Certified Personal Trainer</span>
-                <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Mental Coach</span>
-              </div>
-              
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors">
-                <Linkedin size={24} />
-              </a>
-            </div>
-          </motion.div>
+          <div className="flex justify-center mt-8">
+            {testimonials.map((_, index) => (
+              <button 
+                key={index}
+                onClick={() => setCurrent(index)}
+                className={`w-3 h-3 rounded-full mx-1 ${
+                  current === index ? "bg-teal-500" : "bg-gray-300"
+                }`}
+              ></button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
