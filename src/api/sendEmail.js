@@ -2,12 +2,7 @@ export async function sendEmail(data) {
   const { name, email, phone, program, message } = data;
 
   const emailData = {
-    personalizations: [
-      {
-        to: [{ email: process.env.RECIPIENT_EMAIL }],
-        subject: `New Contact Form Submission from ${name}`
-      }
-    ],
+    subject: `New Contact Form Submission from ${name}`,
     from: { email: 'noreply@michalrapoport.com' },
     content: [
       {
@@ -36,21 +31,28 @@ export async function sendEmail(data) {
   };
 
   try {
-    const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+    const response = await fetch('http://localhost:3000/api/send-email', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       body: JSON.stringify(emailData)
     });
 
+    const contentType = response.headers.get("content-type");
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.errors?.[0]?.message || 'Failed to send email');
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send email');
+      } else {
+        const text = await response.text();
+        throw new Error('Server error: ' + text);
+      }
     }
 
-    return { success: true };
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('Error sending email:', error);
     return { success: false, error: error.message };
